@@ -4,7 +4,9 @@ import java.io.IOException;
 
 public class Recv {
 
+  private final static String EXCHANGE_NAME = "test-topic";
   private final static String QUEUE_NAME = "test-queue";
+  private final static String BINDING_KEY = "outTopic";
 
   public static void main(String[] argv) throws Exception {
     ConnectionFactory factory = new ConnectionFactory();
@@ -12,7 +14,9 @@ public class Recv {
     Connection connection = factory.newConnection();
     Channel channel = connection.createChannel();
 
-//    channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+    channel.exchangeDeclare(EXCHANGE_NAME, "topic", true );
+    String queueName = channel.queueDeclare(QUEUE_NAME, false, false, false, null).getQueue();
+    channel.queueBind(queueName, EXCHANGE_NAME, BINDING_KEY);
     System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
 
     Consumer consumer = new DefaultConsumer(channel) {
