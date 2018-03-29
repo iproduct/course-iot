@@ -14,7 +14,8 @@ You have to provide following settings to run the demo:
 * mqtt_password = "Your MQTT Server password";
 
 If you use anonimous MQTT connection (if you server allows it), you can skip specifing MQQT Server username and password, and you can change line 100 in the program to:
-``` if (client.connect("ESP8266Client")) { 
+``` 
+if (client.connect("ESP8266Client")) { 
     ...
 ```
 
