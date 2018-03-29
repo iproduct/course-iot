@@ -46,3 +46,21 @@ you can check the plugins are enabled by running:
 ```
 rabbitmq-plugins list
 ```
+
+4. Run the RabbitMQ server (<install-dir>/sbin/rabbitmq-serverbat):
+```
+rabbitmq-server
+```
+
+3. Open web coonole at: http://localhost:15672/
+user: guest, password: guest
+
+4. Create a new Exchange - go to Exchanges / Add a new exchange - e.g. name: test-exchange, type: direct, durability: transient
+
+5. Create a new user from web console - go to Admin / Add User, and fill in new user data - e.g. username: test, password: test, tags: Management
+
+6. Click on the user and set all permissions (.*) for configuring, reding, and writing for host "/". Set all (.*)  topic permissions for exchange "test-exchange " we have created.
+
+
+
+
