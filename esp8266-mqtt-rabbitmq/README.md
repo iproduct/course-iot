@@ -86,7 +86,7 @@ mqtt.tcp_listen_options.nodelay = true
 ```
 
 ## Running RabbitMQ Java Client
-In order to run java MQTT messages Recv (receive) and Send demos you can first import the Maven-based project in your favourite IDE (IntelliJ, Eclipse, etc.), and then run correcponding Java client programs:
+In order to run java MQTT messages Recv (receive) and Send demos you can first import the Maven-based project in your favourite IDE (IntelliJ, Eclipse, etc.), and then run corresponding Java client programs:
 * Recv.java - prints received messages to the console (configured with the example RabbitMQ topic exchange createed in previos section)
 * Send.java - sends 100 random command messages to ESP8266 board - "0" means LED off, "1" means LED on :)
 
