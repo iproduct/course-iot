@@ -55,12 +55,37 @@ rabbitmq-server
 3. Open web coonole at: http://localhost:15672/
 user: guest, password: guest
 
-4. Create a new Exchange - go to Exchanges / Add a new exchange - e.g. name: test-exchange, type: direct, durability: transient
+4. Create a new Exchange - go to Exchanges / Add a new exchange - e.g. name: test-exchange, type: topic, durability: durable
 
 5. Create a new user from web console - go to Admin / Add User, and fill in new user data - e.g. username: test, password: test, tags: Management
 
-6. Click on the user and set all permissions (.*) for configuring, reding, and writing for host "/". Set all (.*)  topic permissions for exchange "test-exchange " we have created.
+6. Click on the user and set all permissions (.*) for configuring, reding, and writing for host "/". Set all (.*)  topic permissions for exchange "test-exchange " we have created. Alternatively you could create user from command line:
+```
+rabbitmqctl add_user test test
+rabbitmqctl set_permissions -p / test ".*" ".*" ".*"
+rabbitmqctl set_user_tags test management
+```
 
+7. Goto user config dir (e.g. in C:\Users\user123\AppData\Roaming\RabbitMQ), and rename defult config file from ```rabbitmq.config``` to ```rabbitmq.config.old```.
+Create/modify RabbitMQ configuation file ```rabbitmq.conf``` and add following config settings:
+```
+mqtt.default_user     = test
+mqtt.default_pass     = test
+mqtt.allow_anonymous  = true
+mqtt.vhost            = /
+mqtt.exchange         = test-topic
+# 24 hours by default
+mqtt.subscription_ttl = 86400000
+mqtt.prefetch         = 10
+mqtt.listeners.ssl    = none
+## Default MQTT with TLS port is 8883
+# mqtt.listeners.ssl.default = 8883
+mqtt.listeners.tcp.default = 1883
+mqtt.tcp_listen_options.backlog = 128
+mqtt.tcp_listen_options.nodelay = true
+```
+
+## Running RabbitMQ Java Client
 
 
 
