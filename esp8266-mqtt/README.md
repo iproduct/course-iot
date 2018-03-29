@@ -29,4 +29,20 @@ RabbitMQ is one of most widely used MQ server implementations. It is written in 
 4. (Optional) NodeJS 9.x.x (latest)  - https://nodejs.org/en/download/current/
 
 ### Configuring RabbitMQ
- 
+1. Open RabbitMQ console (shortcut is created in the start menu during installation).
+2. Enable MQTT following  modules:
+```
+[e ] rabbitmq_management_agent         3.7.4
+[E ] rabbitmq_mqtt                     3.7.4
+[e ] rabbitmq_web_dispatch             3.7.4
+[E ] rabbitmq_web_mqtt                 3.7.4
+[E ] rabbitmq_web_mqtt_examples        3.7.4
+```
+by running following command from RabbitMQ console:
+```
+rabbitmq-plugins enable rabbitmq_management_agent rabbitmq_mqtt rabbitmq_web_mqtt rabbitmq_web_mqtt_examples
+```
+you can check the plugins are enabled by running:
+```
+rabbitmq-plugins list
+```
