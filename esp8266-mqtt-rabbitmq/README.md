@@ -40,7 +40,7 @@ RabbitMQ is one of most widely used MQ server implementations. It is written in 
 ```
 by running following command from RabbitMQ console:
 ```
-rabbitmq-plugins enable rabbitmq_management_agent rabbitmq_mqtt rabbitmq_web_mqtt rabbitmq_web_mqtt_examples
+rabbitmq-plugins enable rabbitmq_management rabbitmq_management_agent rabbitmq_mqtt rabbitmq_web_mqtt rabbitmq_web_mqtt_examples
 ```
 you can check the plugins are enabled by running:
 ```
