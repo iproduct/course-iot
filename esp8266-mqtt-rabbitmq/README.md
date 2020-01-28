@@ -52,7 +52,7 @@ rabbitmq-plugins list
 rabbitmq-server
 ```
 
-3. Open web coonole at: http://localhost:15672/
+3. Open web console at: http://localhost:15672/
 user: guest, password: guest
 
 4. Create a new Exchange - go to Exchanges / Add a new exchange - e.g. name: test-exchange, type: topic, durability: durable
@@ -90,6 +90,5 @@ In order to run java MQTT messages Recv (receive) and Send demos you can first i
 * Recv.java - prints received messages to the console (configured with the example RabbitMQ topic exchange createed in previos section)
 * Send.java - sends 100 random command messages to ESP8266 board - "0" means LED off, "1" means LED on :)
 
-Enjoi the demo, and feel free to contact me at: tiliev @ iproduct.org :)
 
 
