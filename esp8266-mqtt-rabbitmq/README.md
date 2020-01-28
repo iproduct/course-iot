@@ -13,7 +13,7 @@ You have to provide following settings to run the demo:
 * mqtt_user = "Your MQTT Server username";
 * mqtt_password = "Your MQTT Server password";
 
-If you use anonimous MQTT connection (if you server allows it), you can skip specifing MQQT Server username and password, and you can change line 100 in the program to:
+If you use anonimous MQTT connection (if you server allows it), you can skip specifing MQTT Server username and password, and you can change line 100 in the program to:
 ``` 
 if (client.connect("ESP8266Client")) { 
     ...
@@ -73,7 +73,7 @@ mqtt.default_user     = test
 mqtt.default_pass     = test
 mqtt.allow_anonymous  = true
 mqtt.vhost            = /
-mqtt.exchange         = test-topic
+mqtt.exchange         = test-exchange
 # 24 hours by default
 mqtt.subscription_ttl = 86400000
 mqtt.prefetch         = 10
